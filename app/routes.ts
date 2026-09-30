@@ -33,9 +33,18 @@
 import { route } from '@tanstack/virtual-file-routes';
 
 export const routes = [
-  // Carrat & Co. home (hero · collection · lab-grown band · bespoke).
+  // Carrat & Co. home (full-screen hero).
   // Implementation: `app/routes/carrat-home.tsx`.
   route('/', 'carrat-home.tsx'),
+  // Carrat & Co. pages (design views). Implementation: `app/components/carrat/sections.tsx`.
+  route('/diamonds', 'carrat-diamonds.tsx'),
+  route('/bespoke', 'carrat-bespoke.tsx'),
+  route('/faq', 'carrat-faq.tsx'),
+  route('/by-order', 'carrat-by-order.tsx'),
+  route('/about', 'carrat-about.tsx'),
+  route('/education', 'carrat-education.tsx'),
+  route('/privacy', 'carrat-privacy.tsx'),
+  route('/returns', 'carrat-returns.tsx'),
   // Replace the engine category page with the theme's (pill toolbar + collapsible
   // filters). Implementation: `app/routes/product-list.tsx`.
   route('/$slug/c{$id}', 'product-list.tsx'),

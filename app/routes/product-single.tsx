@@ -9,7 +9,7 @@ import { Product } from '@salla.sa/twilight-theme-engine/routes/product';
 import type { ProductPageProps } from '@salla.sa/twilight-theme-engine/routes/product';
 import { ProductDetailSkeleton } from '@salla.sa/twilight-theme-engine/skeleton';
 import { withHead } from '@salla.sa/twilight-theme-engine/tanstack';
-import { ProductPage } from '../components/product/ProductPage';
+import { CarratProductPage } from '../components/carrat/CarratProductPage';
 
 export const Route = createFileRoute('/{-$locale}/$slug/p{$id}')({
   loader: ({ params }): Promise<ProductPageProps> => {
@@ -40,5 +40,5 @@ function ProductComponent() {
   // SDK silently skips `<salla-reviews-summary>` (plus delivery-promise /
   // loyalty / cashback). Key by product id so the whole subtree, including
   // that effect, genuinely remounts per product.
-  return <ProductPage key={data.product.id} {...data} />;
+  return <CarratProductPage key={data.product.id} {...data} />;
 }

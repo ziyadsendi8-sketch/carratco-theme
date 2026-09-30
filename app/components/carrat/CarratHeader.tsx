@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import { useQuery } from '@tanstack/react-query';
 import { useRouterState } from '@tanstack/react-router';
 import { useIsHome } from '@salla.sa/twilight-theme-engine/providers';
 import { useHydrated } from '../common/useHydrated';
@@ -9,8 +8,7 @@ import { SallaSearch } from '@salla.sa/twilight-components-react/search';
 import { useTwilight } from '@salla.sa/twilight-theme-engine/providers';
 import { Link } from '@salla.sa/twilight-theme-engine/common';
 import { HookSlot } from '@salla.sa/twilight-theme-engine/hooks';
-import { menu } from '@salla.sa/twilight-theme-engine/api/menu';
-import type { MenuItem } from '@salla.sa/twilight-theme-engine/types';
+import { NAV, scrollToContact } from './nav';
 import logoUrl from '../../assets/carrat/images/logo.webp';
 import { useTx } from './i18n';
 
@@ -19,14 +17,12 @@ import { useTx } from './i18n';
  * language pill + cart right. Transparent over the home hero, solid navy
  * once the page scrolls (or on every non-home page).
  *
- * Nav items come from the store's **header menu** (Dashboard → Menus), so the
- * merchant controls order and links. Below 900px the nav collapses into a
- * full-screen overlay menu behind the hamburger.
+ * Nav is the design's fixed menu (see `nav.ts`) — theme routes, bilingual.
+ * Below 900px it collapses into a full-screen overlay behind the hamburger.
  */
 export function CarratHeader() {
   const { store } = useTwilight();
   const { tx, isAr } = useTx();
-  const { data: items = [] } = useQuery(menu.queries.header());
   const pathname = useRouterState({ select: (s) => s.location.pathname });
   const isHomeRoute = useIsHome();
   const hydrated = useHydrated();
@@ -51,7 +47,6 @@ export function CarratHeader() {
   const homePath = /^(\/dev-[^/]+)?(\/[a-z]{2})?\/?$/.test(pathname);
   const solid = scrolled || (hydrated && !isHomeRoute && !homePath);
 
-  const navItems = (items as MenuItem[]).filter((i) => i?.title);
 
   return (
     <>
@@ -64,9 +59,15 @@ export function CarratHeader() {
 
           <nav className="cc-nav" aria-label={tx('Main menu', 'القائمة الرئيسية')}>
             <ul>
-              {navItems.map((item, i) => (
-                <li key={`${item.id}-${i}`}>
-                  <Link to={item.url}>{item.title}</Link>
+              {NAV.map((item) => (
+                <li key={item.to}>
+                  {item.to === '#contact' ? (
+                    <a href="#contact" onClick={scrollToContact}>
+                      {tx(item.en, item.ar)}
+                    </a>
+                  ) : (
+                    <Link to={item.to}>{tx(item.en, item.ar)}</Link>
+                  )}
                 </li>
               ))}
             </ul>
@@ -111,11 +112,24 @@ export function CarratHeader() {
           &times;
         </button>
         <img className="cc-mobile-menu__logo" src={logoUrl} alt="" />
-        {navItems.map((item, i) => (
-          <Link key={`${item.id}-${i}`} to={item.url} onClick={() => setOpen(false)}>
-            {item.title}
-          </Link>
-        ))}
+        {NAV.map((item) =>
+          item.to === '#contact' ? (
+            <a
+              key={item.to}
+              href="#contact"
+              onClick={(e) => {
+                setOpen(false);
+                scrollToContact(e);
+              }}
+            >
+              {tx(item.en, item.ar)}
+            </a>
+          ) : (
+            <Link key={item.to} to={item.to} onClick={() => setOpen(false)}>
+              {tx(item.en, item.ar)}
+            </Link>
+          )
+        )}
         {multilingual && (
           <button type="button" className="cc-lang cc-mobile-menu__lang" onClick={openLang}>
             {isAr ? 'English' : 'العربية'}

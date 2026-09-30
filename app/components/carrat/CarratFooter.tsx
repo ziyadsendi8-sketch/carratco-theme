@@ -1,27 +1,21 @@
-import { useQuery } from '@tanstack/react-query';
 import { SallaSocial } from '@salla.sa/twilight-components-react/social';
 import { SallaPayments } from '@salla.sa/twilight-components-react/payments';
 import { useTwilight } from '@salla.sa/twilight-theme-engine/providers';
 import { Link } from '@salla.sa/twilight-theme-engine/common';
 import { HookSlot } from '@salla.sa/twilight-theme-engine/hooks';
-import { menu } from '@salla.sa/twilight-theme-engine/api/menu';
-import type { MenuItem } from '@salla.sa/twilight-theme-engine/types';
+import { FOOTER_COMPANY } from './nav';
 import logoUrl from '../../assets/carrat/images/logo.webp';
 import { useTx } from './i18n';
 
 /**
  * Carrat & Co. footer — four columns (brand · contact · company · details),
- * then copyright + the shipping line. "Company" links come from the store's
- * **footer menu**; payment marks come from the store's enabled methods.
+ * then copyright + the shipping line. "Company" links are the design's (nav.ts);
+ * payment marks come from the store's enabled methods.
  * Per brand rules there is no VAT / tax block here.
  */
 export function CarratFooter() {
   const { store } = useTwilight();
   const { tx } = useTx();
-  const { data: footerItems = [] } = useQuery({
-    queryKey: ['carrat', 'menu', 'footer'],
-    queryFn: () => menu.footer(),
-  });
   const year = new Date().getFullYear();
 
   return (
@@ -56,13 +50,11 @@ export function CarratFooter() {
 
           <div className="cc-fcol">
             <h4>{tx('Company', 'الشركة')}</h4>
-            {(footerItems as MenuItem[])
-              .filter((i) => i?.title)
-              .map((item, i) => (
-                <Link key={`${item.id}-${i}`} to={item.url}>
-                  {item.title}
-                </Link>
-              ))}
+            {FOOTER_COMPANY.map((item) => (
+              <Link key={item.to} to={item.to}>
+                {tx(item.en, item.ar)}
+              </Link>
+            ))}
           </div>
 
           <div className="cc-fcol">

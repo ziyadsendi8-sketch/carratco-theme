@@ -11,16 +11,24 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as DotDotDotDotNode_modulesDotpnpmAtsallaDotsaChar43twilightThemeEn_d11bed0737af4b92ddc781c90f13c9c2Node_modulesAtsallaDotsaTwilightThemeEngineDottwilightLocaleRouteImport } from './../node_modules/.pnpm/@salla.sa+twilight-theme-en_d11bed0737af4b92ddc781c90f13c9c2/node_modules/@salla.sa/twilight-theme-engine/.twilight/$locale'
 import { Route as carratHomeRouteImport } from './routes/carrat-home'
+import { Route as carratAboutRouteImport } from './routes/carrat-about'
 import { Route as DotDotDotDotNode_modulesDotpnpmAtsallaDotsaChar43twilightThemeEn_d11bed0737af4b92ddc781c90f13c9c2Node_modulesAtsallaDotsaTwilightThemeEngineDottwilightAccountRouteImport } from './../node_modules/.pnpm/@salla.sa+twilight-theme-en_d11bed0737af4b92ddc781c90f13c9c2/node_modules/@salla.sa/twilight-theme-engine/.twilight/account'
+import { Route as carratBespokeRouteImport } from './routes/carrat-bespoke'
 import { Route as blogRouteImport } from './routes/blog'
 import { Route as brandsRouteImport } from './routes/brands'
+import { Route as carratByOrderRouteImport } from './routes/carrat-by-order'
 import { Route as cartPageRouteImport } from './routes/cart-page'
+import { Route as carratDiamondsRouteImport } from './routes/carrat-diamonds'
+import { Route as carratEducationRouteImport } from './routes/carrat-education'
+import { Route as carratFaqRouteImport } from './routes/carrat-faq'
 import { Route as latestProductsPageRouteImport } from './routes/latest-products-page'
 import { Route as logoutRouteImport } from './routes/logout'
 import { Route as loyaltyRouteImport } from './routes/loyalty'
 import { Route as mostSalesProductsPageRouteImport } from './routes/most-sales-products-page'
 import { Route as offersPageRouteImport } from './routes/offers-page'
 import { Route as pendingOrdersRouteImport } from './routes/pending-orders'
+import { Route as carratPrivacyRouteImport } from './routes/carrat-privacy'
+import { Route as carratReturnsRouteImport } from './routes/carrat-returns'
 import { Route as searchPageRouteImport } from './routes/search-page'
 import { Route as testimonialsRouteImport } from './routes/testimonials'
 import { Route as slugDotbrandIdRouteImport } from './routes/$slug.brand-$id'
@@ -59,6 +67,12 @@ const carratHomeRoute = carratHomeRouteImport.update({
   getParentRoute: () =>
     DotDotDotDotNode_modulesDotpnpmAtsallaDotsaChar43twilightThemeEn_d11bed0737af4b92ddc781c90f13c9c2Node_modulesAtsallaDotsaTwilightThemeEngineDottwilightLocaleRoute,
 } as any)
+const carratAboutRoute = carratAboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () =>
+    DotDotDotDotNode_modulesDotpnpmAtsallaDotsaChar43twilightThemeEn_d11bed0737af4b92ddc781c90f13c9c2Node_modulesAtsallaDotsaTwilightThemeEngineDottwilightLocaleRoute,
+} as any)
 const DotDotDotDotNode_modulesDotpnpmAtsallaDotsaChar43twilightThemeEn_d11bed0737af4b92ddc781c90f13c9c2Node_modulesAtsallaDotsaTwilightThemeEngineDottwilightAccountRoute =
   DotDotDotDotNode_modulesDotpnpmAtsallaDotsaChar43twilightThemeEn_d11bed0737af4b92ddc781c90f13c9c2Node_modulesAtsallaDotsaTwilightThemeEngineDottwilightAccountRouteImport.update(
     {
@@ -68,6 +82,12 @@ const DotDotDotDotNode_modulesDotpnpmAtsallaDotsaChar43twilightThemeEn_d11bed073
         DotDotDotDotNode_modulesDotpnpmAtsallaDotsaChar43twilightThemeEn_d11bed0737af4b92ddc781c90f13c9c2Node_modulesAtsallaDotsaTwilightThemeEngineDottwilightLocaleRoute,
     } as any,
   )
+const carratBespokeRoute = carratBespokeRouteImport.update({
+  id: '/bespoke',
+  path: '/bespoke',
+  getParentRoute: () =>
+    DotDotDotDotNode_modulesDotpnpmAtsallaDotsaChar43twilightThemeEn_d11bed0737af4b92ddc781c90f13c9c2Node_modulesAtsallaDotsaTwilightThemeEngineDottwilightLocaleRoute,
+} as any)
 const blogRoute = blogRouteImport.update({
   id: '/blog',
   path: '/blog',
@@ -80,9 +100,33 @@ const brandsRoute = brandsRouteImport.update({
   getParentRoute: () =>
     DotDotDotDotNode_modulesDotpnpmAtsallaDotsaChar43twilightThemeEn_d11bed0737af4b92ddc781c90f13c9c2Node_modulesAtsallaDotsaTwilightThemeEngineDottwilightLocaleRoute,
 } as any)
+const carratByOrderRoute = carratByOrderRouteImport.update({
+  id: '/by-order',
+  path: '/by-order',
+  getParentRoute: () =>
+    DotDotDotDotNode_modulesDotpnpmAtsallaDotsaChar43twilightThemeEn_d11bed0737af4b92ddc781c90f13c9c2Node_modulesAtsallaDotsaTwilightThemeEngineDottwilightLocaleRoute,
+} as any)
 const cartPageRoute = cartPageRouteImport.update({
   id: '/cart',
   path: '/cart',
+  getParentRoute: () =>
+    DotDotDotDotNode_modulesDotpnpmAtsallaDotsaChar43twilightThemeEn_d11bed0737af4b92ddc781c90f13c9c2Node_modulesAtsallaDotsaTwilightThemeEngineDottwilightLocaleRoute,
+} as any)
+const carratDiamondsRoute = carratDiamondsRouteImport.update({
+  id: '/diamonds',
+  path: '/diamonds',
+  getParentRoute: () =>
+    DotDotDotDotNode_modulesDotpnpmAtsallaDotsaChar43twilightThemeEn_d11bed0737af4b92ddc781c90f13c9c2Node_modulesAtsallaDotsaTwilightThemeEngineDottwilightLocaleRoute,
+} as any)
+const carratEducationRoute = carratEducationRouteImport.update({
+  id: '/education',
+  path: '/education',
+  getParentRoute: () =>
+    DotDotDotDotNode_modulesDotpnpmAtsallaDotsaChar43twilightThemeEn_d11bed0737af4b92ddc781c90f13c9c2Node_modulesAtsallaDotsaTwilightThemeEngineDottwilightLocaleRoute,
+} as any)
+const carratFaqRoute = carratFaqRouteImport.update({
+  id: '/faq',
+  path: '/faq',
   getParentRoute: () =>
     DotDotDotDotNode_modulesDotpnpmAtsallaDotsaChar43twilightThemeEn_d11bed0737af4b92ddc781c90f13c9c2Node_modulesAtsallaDotsaTwilightThemeEngineDottwilightLocaleRoute,
 } as any)
@@ -119,6 +163,18 @@ const offersPageRoute = offersPageRouteImport.update({
 const pendingOrdersRoute = pendingOrdersRouteImport.update({
   id: '/pending-orders',
   path: '/pending-orders',
+  getParentRoute: () =>
+    DotDotDotDotNode_modulesDotpnpmAtsallaDotsaChar43twilightThemeEn_d11bed0737af4b92ddc781c90f13c9c2Node_modulesAtsallaDotsaTwilightThemeEngineDottwilightLocaleRoute,
+} as any)
+const carratPrivacyRoute = carratPrivacyRouteImport.update({
+  id: '/privacy',
+  path: '/privacy',
+  getParentRoute: () =>
+    DotDotDotDotNode_modulesDotpnpmAtsallaDotsaChar43twilightThemeEn_d11bed0737af4b92ddc781c90f13c9c2Node_modulesAtsallaDotsaTwilightThemeEngineDottwilightLocaleRoute,
+} as any)
+const carratReturnsRoute = carratReturnsRouteImport.update({
+  id: '/returns',
+  path: '/returns',
   getParentRoute: () =>
     DotDotDotDotNode_modulesDotpnpmAtsallaDotsaChar43twilightThemeEn_d11bed0737af4b92ddc781c90f13c9c2Node_modulesAtsallaDotsaTwilightThemeEngineDottwilightLocaleRoute,
 } as any)
@@ -268,16 +324,24 @@ const DotDotDotDotNode_modulesDotpnpmAtsallaDotsaChar43twilightThemeEn_d11bed073
 export interface FileRoutesByFullPath {
   '/{-$locale}': typeof DotDotDotDotNode_modulesDotpnpmAtsallaDotsaChar43twilightThemeEn_d11bed0737af4b92ddc781c90f13c9c2Node_modulesAtsallaDotsaTwilightThemeEngineDottwilightLocaleRouteWithChildren
   '/{-$locale}/': typeof carratHomeRoute
+  '/{-$locale}/about': typeof carratAboutRoute
   '/{-$locale}/account': typeof DotDotDotDotNode_modulesDotpnpmAtsallaDotsaChar43twilightThemeEn_d11bed0737af4b92ddc781c90f13c9c2Node_modulesAtsallaDotsaTwilightThemeEngineDottwilightAccountRouteWithChildren
+  '/{-$locale}/bespoke': typeof carratBespokeRoute
   '/{-$locale}/blog': typeof blogRoute
   '/{-$locale}/brands': typeof brandsRoute
+  '/{-$locale}/by-order': typeof carratByOrderRoute
   '/{-$locale}/cart': typeof cartPageRoute
+  '/{-$locale}/diamonds': typeof carratDiamondsRoute
+  '/{-$locale}/education': typeof carratEducationRoute
+  '/{-$locale}/faq': typeof carratFaqRoute
   '/{-$locale}/latest-products': typeof latestProductsPageRoute
   '/{-$locale}/logout': typeof logoutRoute
   '/{-$locale}/loyalty': typeof loyaltyRoute
   '/{-$locale}/most-sales-products': typeof mostSalesProductsPageRoute
   '/{-$locale}/offers': typeof offersPageRoute
   '/{-$locale}/pending-orders': typeof pendingOrdersRoute
+  '/{-$locale}/privacy': typeof carratPrivacyRoute
+  '/{-$locale}/returns': typeof carratReturnsRoute
   '/{-$locale}/search': typeof searchPageRoute
   '/{-$locale}/testimonials': typeof testimonialsRoute
   '/{-$locale}/$slug/brand-{$id}': typeof slugDotbrandIdRoute
@@ -304,16 +368,24 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/{-$locale}': typeof carratHomeRoute
+  '/{-$locale}/about': typeof carratAboutRoute
   '/{-$locale}/account': typeof DotDotDotDotNode_modulesDotpnpmAtsallaDotsaChar43twilightThemeEn_d11bed0737af4b92ddc781c90f13c9c2Node_modulesAtsallaDotsaTwilightThemeEngineDottwilightAccountRouteWithChildren
+  '/{-$locale}/bespoke': typeof carratBespokeRoute
   '/{-$locale}/blog': typeof blogRoute
   '/{-$locale}/brands': typeof brandsRoute
+  '/{-$locale}/by-order': typeof carratByOrderRoute
   '/{-$locale}/cart': typeof cartPageRoute
+  '/{-$locale}/diamonds': typeof carratDiamondsRoute
+  '/{-$locale}/education': typeof carratEducationRoute
+  '/{-$locale}/faq': typeof carratFaqRoute
   '/{-$locale}/latest-products': typeof latestProductsPageRoute
   '/{-$locale}/logout': typeof logoutRoute
   '/{-$locale}/loyalty': typeof loyaltyRoute
   '/{-$locale}/most-sales-products': typeof mostSalesProductsPageRoute
   '/{-$locale}/offers': typeof offersPageRoute
   '/{-$locale}/pending-orders': typeof pendingOrdersRoute
+  '/{-$locale}/privacy': typeof carratPrivacyRoute
+  '/{-$locale}/returns': typeof carratReturnsRoute
   '/{-$locale}/search': typeof searchPageRoute
   '/{-$locale}/testimonials': typeof testimonialsRoute
   '/{-$locale}/$slug/brand-{$id}': typeof slugDotbrandIdRoute
@@ -342,16 +414,24 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/{-$locale}': typeof DotDotDotDotNode_modulesDotpnpmAtsallaDotsaChar43twilightThemeEn_d11bed0737af4b92ddc781c90f13c9c2Node_modulesAtsallaDotsaTwilightThemeEngineDottwilightLocaleRouteWithChildren
   '/{-$locale}/': typeof carratHomeRoute
+  '/{-$locale}/about': typeof carratAboutRoute
   '/{-$locale}/account': typeof DotDotDotDotNode_modulesDotpnpmAtsallaDotsaChar43twilightThemeEn_d11bed0737af4b92ddc781c90f13c9c2Node_modulesAtsallaDotsaTwilightThemeEngineDottwilightAccountRouteWithChildren
+  '/{-$locale}/bespoke': typeof carratBespokeRoute
   '/{-$locale}/blog': typeof blogRoute
   '/{-$locale}/brands': typeof brandsRoute
+  '/{-$locale}/by-order': typeof carratByOrderRoute
   '/{-$locale}/cart': typeof cartPageRoute
+  '/{-$locale}/diamonds': typeof carratDiamondsRoute
+  '/{-$locale}/education': typeof carratEducationRoute
+  '/{-$locale}/faq': typeof carratFaqRoute
   '/{-$locale}/latest-products': typeof latestProductsPageRoute
   '/{-$locale}/logout': typeof logoutRoute
   '/{-$locale}/loyalty': typeof loyaltyRoute
   '/{-$locale}/most-sales-products': typeof mostSalesProductsPageRoute
   '/{-$locale}/offers': typeof offersPageRoute
   '/{-$locale}/pending-orders': typeof pendingOrdersRoute
+  '/{-$locale}/privacy': typeof carratPrivacyRoute
+  '/{-$locale}/returns': typeof carratReturnsRoute
   '/{-$locale}/search': typeof searchPageRoute
   '/{-$locale}/testimonials': typeof testimonialsRoute
   '/{-$locale}/$slug/brand-{$id}': typeof slugDotbrandIdRoute
@@ -381,16 +461,24 @@ export interface FileRouteTypes {
   fullPaths:
     | '/{-$locale}'
     | '/{-$locale}/'
+    | '/{-$locale}/about'
     | '/{-$locale}/account'
+    | '/{-$locale}/bespoke'
     | '/{-$locale}/blog'
     | '/{-$locale}/brands'
+    | '/{-$locale}/by-order'
     | '/{-$locale}/cart'
+    | '/{-$locale}/diamonds'
+    | '/{-$locale}/education'
+    | '/{-$locale}/faq'
     | '/{-$locale}/latest-products'
     | '/{-$locale}/logout'
     | '/{-$locale}/loyalty'
     | '/{-$locale}/most-sales-products'
     | '/{-$locale}/offers'
     | '/{-$locale}/pending-orders'
+    | '/{-$locale}/privacy'
+    | '/{-$locale}/returns'
     | '/{-$locale}/search'
     | '/{-$locale}/testimonials'
     | '/{-$locale}/$slug/brand-{$id}'
@@ -417,16 +505,24 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/{-$locale}'
+    | '/{-$locale}/about'
     | '/{-$locale}/account'
+    | '/{-$locale}/bespoke'
     | '/{-$locale}/blog'
     | '/{-$locale}/brands'
+    | '/{-$locale}/by-order'
     | '/{-$locale}/cart'
+    | '/{-$locale}/diamonds'
+    | '/{-$locale}/education'
+    | '/{-$locale}/faq'
     | '/{-$locale}/latest-products'
     | '/{-$locale}/logout'
     | '/{-$locale}/loyalty'
     | '/{-$locale}/most-sales-products'
     | '/{-$locale}/offers'
     | '/{-$locale}/pending-orders'
+    | '/{-$locale}/privacy'
+    | '/{-$locale}/returns'
     | '/{-$locale}/search'
     | '/{-$locale}/testimonials'
     | '/{-$locale}/$slug/brand-{$id}'
@@ -454,16 +550,24 @@ export interface FileRouteTypes {
     | '__root__'
     | '/{-$locale}'
     | '/{-$locale}/'
+    | '/{-$locale}/about'
     | '/{-$locale}/account'
+    | '/{-$locale}/bespoke'
     | '/{-$locale}/blog'
     | '/{-$locale}/brands'
+    | '/{-$locale}/by-order'
     | '/{-$locale}/cart'
+    | '/{-$locale}/diamonds'
+    | '/{-$locale}/education'
+    | '/{-$locale}/faq'
     | '/{-$locale}/latest-products'
     | '/{-$locale}/logout'
     | '/{-$locale}/loyalty'
     | '/{-$locale}/most-sales-products'
     | '/{-$locale}/offers'
     | '/{-$locale}/pending-orders'
+    | '/{-$locale}/privacy'
+    | '/{-$locale}/returns'
     | '/{-$locale}/search'
     | '/{-$locale}/testimonials'
     | '/{-$locale}/$slug/brand-{$id}'
@@ -509,11 +613,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof carratHomeRouteImport
       parentRoute: typeof DotDotDotDotNode_modulesDotpnpmAtsallaDotsaChar43twilightThemeEn_d11bed0737af4b92ddc781c90f13c9c2Node_modulesAtsallaDotsaTwilightThemeEngineDottwilightLocaleRoute
     }
+    '/{-$locale}/about': {
+      id: '/{-$locale}/about'
+      path: '/about'
+      fullPath: '/{-$locale}/about'
+      preLoaderRoute: typeof carratAboutRouteImport
+      parentRoute: typeof DotDotDotDotNode_modulesDotpnpmAtsallaDotsaChar43twilightThemeEn_d11bed0737af4b92ddc781c90f13c9c2Node_modulesAtsallaDotsaTwilightThemeEngineDottwilightLocaleRoute
+    }
     '/{-$locale}/account': {
       id: '/{-$locale}/account'
       path: '/account'
       fullPath: '/{-$locale}/account'
       preLoaderRoute: typeof DotDotDotDotNode_modulesDotpnpmAtsallaDotsaChar43twilightThemeEn_d11bed0737af4b92ddc781c90f13c9c2Node_modulesAtsallaDotsaTwilightThemeEngineDottwilightAccountRouteImport
+      parentRoute: typeof DotDotDotDotNode_modulesDotpnpmAtsallaDotsaChar43twilightThemeEn_d11bed0737af4b92ddc781c90f13c9c2Node_modulesAtsallaDotsaTwilightThemeEngineDottwilightLocaleRoute
+    }
+    '/{-$locale}/bespoke': {
+      id: '/{-$locale}/bespoke'
+      path: '/bespoke'
+      fullPath: '/{-$locale}/bespoke'
+      preLoaderRoute: typeof carratBespokeRouteImport
       parentRoute: typeof DotDotDotDotNode_modulesDotpnpmAtsallaDotsaChar43twilightThemeEn_d11bed0737af4b92ddc781c90f13c9c2Node_modulesAtsallaDotsaTwilightThemeEngineDottwilightLocaleRoute
     }
     '/{-$locale}/blog': {
@@ -530,11 +648,39 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof brandsRouteImport
       parentRoute: typeof DotDotDotDotNode_modulesDotpnpmAtsallaDotsaChar43twilightThemeEn_d11bed0737af4b92ddc781c90f13c9c2Node_modulesAtsallaDotsaTwilightThemeEngineDottwilightLocaleRoute
     }
+    '/{-$locale}/by-order': {
+      id: '/{-$locale}/by-order'
+      path: '/by-order'
+      fullPath: '/{-$locale}/by-order'
+      preLoaderRoute: typeof carratByOrderRouteImport
+      parentRoute: typeof DotDotDotDotNode_modulesDotpnpmAtsallaDotsaChar43twilightThemeEn_d11bed0737af4b92ddc781c90f13c9c2Node_modulesAtsallaDotsaTwilightThemeEngineDottwilightLocaleRoute
+    }
     '/{-$locale}/cart': {
       id: '/{-$locale}/cart'
       path: '/cart'
       fullPath: '/{-$locale}/cart'
       preLoaderRoute: typeof cartPageRouteImport
+      parentRoute: typeof DotDotDotDotNode_modulesDotpnpmAtsallaDotsaChar43twilightThemeEn_d11bed0737af4b92ddc781c90f13c9c2Node_modulesAtsallaDotsaTwilightThemeEngineDottwilightLocaleRoute
+    }
+    '/{-$locale}/diamonds': {
+      id: '/{-$locale}/diamonds'
+      path: '/diamonds'
+      fullPath: '/{-$locale}/diamonds'
+      preLoaderRoute: typeof carratDiamondsRouteImport
+      parentRoute: typeof DotDotDotDotNode_modulesDotpnpmAtsallaDotsaChar43twilightThemeEn_d11bed0737af4b92ddc781c90f13c9c2Node_modulesAtsallaDotsaTwilightThemeEngineDottwilightLocaleRoute
+    }
+    '/{-$locale}/education': {
+      id: '/{-$locale}/education'
+      path: '/education'
+      fullPath: '/{-$locale}/education'
+      preLoaderRoute: typeof carratEducationRouteImport
+      parentRoute: typeof DotDotDotDotNode_modulesDotpnpmAtsallaDotsaChar43twilightThemeEn_d11bed0737af4b92ddc781c90f13c9c2Node_modulesAtsallaDotsaTwilightThemeEngineDottwilightLocaleRoute
+    }
+    '/{-$locale}/faq': {
+      id: '/{-$locale}/faq'
+      path: '/faq'
+      fullPath: '/{-$locale}/faq'
+      preLoaderRoute: typeof carratFaqRouteImport
       parentRoute: typeof DotDotDotDotNode_modulesDotpnpmAtsallaDotsaChar43twilightThemeEn_d11bed0737af4b92ddc781c90f13c9c2Node_modulesAtsallaDotsaTwilightThemeEngineDottwilightLocaleRoute
     }
     '/{-$locale}/latest-products': {
@@ -577,6 +723,20 @@ declare module '@tanstack/react-router' {
       path: '/pending-orders'
       fullPath: '/{-$locale}/pending-orders'
       preLoaderRoute: typeof pendingOrdersRouteImport
+      parentRoute: typeof DotDotDotDotNode_modulesDotpnpmAtsallaDotsaChar43twilightThemeEn_d11bed0737af4b92ddc781c90f13c9c2Node_modulesAtsallaDotsaTwilightThemeEngineDottwilightLocaleRoute
+    }
+    '/{-$locale}/privacy': {
+      id: '/{-$locale}/privacy'
+      path: '/privacy'
+      fullPath: '/{-$locale}/privacy'
+      preLoaderRoute: typeof carratPrivacyRouteImport
+      parentRoute: typeof DotDotDotDotNode_modulesDotpnpmAtsallaDotsaChar43twilightThemeEn_d11bed0737af4b92ddc781c90f13c9c2Node_modulesAtsallaDotsaTwilightThemeEngineDottwilightLocaleRoute
+    }
+    '/{-$locale}/returns': {
+      id: '/{-$locale}/returns'
+      path: '/returns'
+      fullPath: '/{-$locale}/returns'
+      preLoaderRoute: typeof carratReturnsRouteImport
       parentRoute: typeof DotDotDotDotNode_modulesDotpnpmAtsallaDotsaChar43twilightThemeEn_d11bed0737af4b92ddc781c90f13c9c2Node_modulesAtsallaDotsaTwilightThemeEngineDottwilightLocaleRoute
     }
     '/{-$locale}/search': {
@@ -773,16 +933,24 @@ const DotDotDotDotNode_modulesDotpnpmAtsallaDotsaChar43twilightThemeEn_d11bed073
 
 interface DotDotDotDotNode_modulesDotpnpmAtsallaDotsaChar43twilightThemeEn_d11bed0737af4b92ddc781c90f13c9c2Node_modulesAtsallaDotsaTwilightThemeEngineDottwilightLocaleRouteChildren {
   carratHomeRoute: typeof carratHomeRoute
+  carratAboutRoute: typeof carratAboutRoute
   DotDotDotDotNode_modulesDotpnpmAtsallaDotsaChar43twilightThemeEn_d11bed0737af4b92ddc781c90f13c9c2Node_modulesAtsallaDotsaTwilightThemeEngineDottwilightAccountRoute: typeof DotDotDotDotNode_modulesDotpnpmAtsallaDotsaChar43twilightThemeEn_d11bed0737af4b92ddc781c90f13c9c2Node_modulesAtsallaDotsaTwilightThemeEngineDottwilightAccountRouteWithChildren
+  carratBespokeRoute: typeof carratBespokeRoute
   blogRoute: typeof blogRoute
   brandsRoute: typeof brandsRoute
+  carratByOrderRoute: typeof carratByOrderRoute
   cartPageRoute: typeof cartPageRoute
+  carratDiamondsRoute: typeof carratDiamondsRoute
+  carratEducationRoute: typeof carratEducationRoute
+  carratFaqRoute: typeof carratFaqRoute
   latestProductsPageRoute: typeof latestProductsPageRoute
   logoutRoute: typeof logoutRoute
   loyaltyRoute: typeof loyaltyRoute
   mostSalesProductsPageRoute: typeof mostSalesProductsPageRoute
   offersPageRoute: typeof offersPageRoute
   pendingOrdersRoute: typeof pendingOrdersRoute
+  carratPrivacyRoute: typeof carratPrivacyRoute
+  carratReturnsRoute: typeof carratReturnsRoute
   searchPageRoute: typeof searchPageRoute
   testimonialsRoute: typeof testimonialsRoute
   slugDotbrandIdRoute: typeof slugDotbrandIdRoute
@@ -803,17 +971,25 @@ interface DotDotDotDotNode_modulesDotpnpmAtsallaDotsaChar43twilightThemeEn_d11be
 const DotDotDotDotNode_modulesDotpnpmAtsallaDotsaChar43twilightThemeEn_d11bed0737af4b92ddc781c90f13c9c2Node_modulesAtsallaDotsaTwilightThemeEngineDottwilightLocaleRouteChildren: DotDotDotDotNode_modulesDotpnpmAtsallaDotsaChar43twilightThemeEn_d11bed0737af4b92ddc781c90f13c9c2Node_modulesAtsallaDotsaTwilightThemeEngineDottwilightLocaleRouteChildren =
   {
     carratHomeRoute: carratHomeRoute,
+    carratAboutRoute: carratAboutRoute,
     DotDotDotDotNode_modulesDotpnpmAtsallaDotsaChar43twilightThemeEn_d11bed0737af4b92ddc781c90f13c9c2Node_modulesAtsallaDotsaTwilightThemeEngineDottwilightAccountRoute:
       DotDotDotDotNode_modulesDotpnpmAtsallaDotsaChar43twilightThemeEn_d11bed0737af4b92ddc781c90f13c9c2Node_modulesAtsallaDotsaTwilightThemeEngineDottwilightAccountRouteWithChildren,
+    carratBespokeRoute: carratBespokeRoute,
     blogRoute: blogRoute,
     brandsRoute: brandsRoute,
+    carratByOrderRoute: carratByOrderRoute,
     cartPageRoute: cartPageRoute,
+    carratDiamondsRoute: carratDiamondsRoute,
+    carratEducationRoute: carratEducationRoute,
+    carratFaqRoute: carratFaqRoute,
     latestProductsPageRoute: latestProductsPageRoute,
     logoutRoute: logoutRoute,
     loyaltyRoute: loyaltyRoute,
     mostSalesProductsPageRoute: mostSalesProductsPageRoute,
     offersPageRoute: offersPageRoute,
     pendingOrdersRoute: pendingOrdersRoute,
+    carratPrivacyRoute: carratPrivacyRoute,
+    carratReturnsRoute: carratReturnsRoute,
     searchPageRoute: searchPageRoute,
     testimonialsRoute: testimonialsRoute,
     slugDotbrandIdRoute: slugDotbrandIdRoute,
