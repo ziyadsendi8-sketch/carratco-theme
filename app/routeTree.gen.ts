@@ -10,7 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as DotDotDotDotNode_modulesDotpnpmAtsallaDotsaChar43twilightThemeEn_d11bed0737af4b92ddc781c90f13c9c2Node_modulesAtsallaDotsaTwilightThemeEngineDottwilightLocaleRouteImport } from './../node_modules/.pnpm/@salla.sa+twilight-theme-en_d11bed0737af4b92ddc781c90f13c9c2/node_modules/@salla.sa/twilight-theme-engine/.twilight/$locale'
-import { Route as indexRouteImport } from './routes/index'
+import { Route as carratHomeRouteImport } from './routes/carrat-home'
 import { Route as DotDotDotDotNode_modulesDotpnpmAtsallaDotsaChar43twilightThemeEn_d11bed0737af4b92ddc781c90f13c9c2Node_modulesAtsallaDotsaTwilightThemeEngineDottwilightAccountRouteImport } from './../node_modules/.pnpm/@salla.sa+twilight-theme-en_d11bed0737af4b92ddc781c90f13c9c2/node_modules/@salla.sa/twilight-theme-engine/.twilight/account'
 import { Route as blogRouteImport } from './routes/blog'
 import { Route as brandsRouteImport } from './routes/brands'
@@ -53,7 +53,7 @@ const DotDotDotDotNode_modulesDotpnpmAtsallaDotsaChar43twilightThemeEn_d11bed073
       getParentRoute: () => rootRouteImport,
     } as any,
   )
-const indexRoute = indexRouteImport.update({
+const carratHomeRoute = carratHomeRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () =>
@@ -267,7 +267,7 @@ const DotDotDotDotNode_modulesDotpnpmAtsallaDotsaChar43twilightThemeEn_d11bed073
 
 export interface FileRoutesByFullPath {
   '/{-$locale}': typeof DotDotDotDotNode_modulesDotpnpmAtsallaDotsaChar43twilightThemeEn_d11bed0737af4b92ddc781c90f13c9c2Node_modulesAtsallaDotsaTwilightThemeEngineDottwilightLocaleRouteWithChildren
-  '/{-$locale}/': typeof indexRoute
+  '/{-$locale}/': typeof carratHomeRoute
   '/{-$locale}/account': typeof DotDotDotDotNode_modulesDotpnpmAtsallaDotsaChar43twilightThemeEn_d11bed0737af4b92ddc781c90f13c9c2Node_modulesAtsallaDotsaTwilightThemeEngineDottwilightAccountRouteWithChildren
   '/{-$locale}/blog': typeof blogRoute
   '/{-$locale}/brands': typeof brandsRoute
@@ -303,7 +303,7 @@ export interface FileRoutesByFullPath {
   '/{-$locale}/redirect/$type/$id': typeof DotDotDotDotNode_modulesDotpnpmAtsallaDotsaChar43twilightThemeEn_d11bed0737af4b92ddc781c90f13c9c2Node_modulesAtsallaDotsaTwilightThemeEngineDottwilightRedirectDottypeDotidRoute
 }
 export interface FileRoutesByTo {
-  '/{-$locale}': typeof indexRoute
+  '/{-$locale}': typeof carratHomeRoute
   '/{-$locale}/account': typeof DotDotDotDotNode_modulesDotpnpmAtsallaDotsaChar43twilightThemeEn_d11bed0737af4b92ddc781c90f13c9c2Node_modulesAtsallaDotsaTwilightThemeEngineDottwilightAccountRouteWithChildren
   '/{-$locale}/blog': typeof blogRoute
   '/{-$locale}/brands': typeof brandsRoute
@@ -341,7 +341,7 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/{-$locale}': typeof DotDotDotDotNode_modulesDotpnpmAtsallaDotsaChar43twilightThemeEn_d11bed0737af4b92ddc781c90f13c9c2Node_modulesAtsallaDotsaTwilightThemeEngineDottwilightLocaleRouteWithChildren
-  '/{-$locale}/': typeof indexRoute
+  '/{-$locale}/': typeof carratHomeRoute
   '/{-$locale}/account': typeof DotDotDotDotNode_modulesDotpnpmAtsallaDotsaChar43twilightThemeEn_d11bed0737af4b92ddc781c90f13c9c2Node_modulesAtsallaDotsaTwilightThemeEngineDottwilightAccountRouteWithChildren
   '/{-$locale}/blog': typeof blogRoute
   '/{-$locale}/brands': typeof brandsRoute
@@ -506,7 +506,7 @@ declare module '@tanstack/react-router' {
       id: '/{-$locale}/'
       path: '/'
       fullPath: '/{-$locale}/'
-      preLoaderRoute: typeof indexRouteImport
+      preLoaderRoute: typeof carratHomeRouteImport
       parentRoute: typeof DotDotDotDotNode_modulesDotpnpmAtsallaDotsaChar43twilightThemeEn_d11bed0737af4b92ddc781c90f13c9c2Node_modulesAtsallaDotsaTwilightThemeEngineDottwilightLocaleRoute
     }
     '/{-$locale}/account': {
@@ -772,7 +772,7 @@ const DotDotDotDotNode_modulesDotpnpmAtsallaDotsaChar43twilightThemeEn_d11bed073
   )
 
 interface DotDotDotDotNode_modulesDotpnpmAtsallaDotsaChar43twilightThemeEn_d11bed0737af4b92ddc781c90f13c9c2Node_modulesAtsallaDotsaTwilightThemeEngineDottwilightLocaleRouteChildren {
-  indexRoute: typeof indexRoute
+  carratHomeRoute: typeof carratHomeRoute
   DotDotDotDotNode_modulesDotpnpmAtsallaDotsaChar43twilightThemeEn_d11bed0737af4b92ddc781c90f13c9c2Node_modulesAtsallaDotsaTwilightThemeEngineDottwilightAccountRoute: typeof DotDotDotDotNode_modulesDotpnpmAtsallaDotsaChar43twilightThemeEn_d11bed0737af4b92ddc781c90f13c9c2Node_modulesAtsallaDotsaTwilightThemeEngineDottwilightAccountRouteWithChildren
   blogRoute: typeof blogRoute
   brandsRoute: typeof brandsRoute
@@ -802,7 +802,7 @@ interface DotDotDotDotNode_modulesDotpnpmAtsallaDotsaChar43twilightThemeEn_d11be
 
 const DotDotDotDotNode_modulesDotpnpmAtsallaDotsaChar43twilightThemeEn_d11bed0737af4b92ddc781c90f13c9c2Node_modulesAtsallaDotsaTwilightThemeEngineDottwilightLocaleRouteChildren: DotDotDotDotNode_modulesDotpnpmAtsallaDotsaChar43twilightThemeEn_d11bed0737af4b92ddc781c90f13c9c2Node_modulesAtsallaDotsaTwilightThemeEngineDottwilightLocaleRouteChildren =
   {
-    indexRoute: indexRoute,
+    carratHomeRoute: carratHomeRoute,
     DotDotDotDotNode_modulesDotpnpmAtsallaDotsaChar43twilightThemeEn_d11bed0737af4b92ddc781c90f13c9c2Node_modulesAtsallaDotsaTwilightThemeEngineDottwilightAccountRoute:
       DotDotDotDotNode_modulesDotpnpmAtsallaDotsaChar43twilightThemeEn_d11bed0737af4b92ddc781c90f13c9c2Node_modulesAtsallaDotsaTwilightThemeEngineDottwilightAccountRouteWithChildren,
     blogRoute: blogRoute,

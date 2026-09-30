@@ -10,6 +10,7 @@ import themeTranslations from 'virtual:twilight/theme-translations';
 import devSchema from 'virtual:twilight/schema';
 import { ThemeLayout } from '../components/layout/ThemeLayout';
 import '../styles/app.css';
+import '../styles/carrat.scss';
 
 // Dev-only: reads the theme's local twilight.json (settings + components),
 // fills defaults, and lets you edit them live. Imported from the engine's `/dev`

@@ -1,13 +1,10 @@
-import { lazy, Suspense, useEffect, useState } from 'react';
+import { lazy, Suspense } from 'react';
 import type { ReactNode } from 'react';
-import { useRouterState } from '@tanstack/react-router';
 import { useTwilight } from '@salla.sa/twilight-theme-engine/providers';
 import { useTranslation } from '@salla.sa/twilight-theme-engine/i18n';
 import { useUser } from '@salla.sa/twilight-theme-engine/hooks/useUser';
-import { Header } from './Header';
-import { Footer } from './Footer';
-import { MobileBottomBar } from './MobileBottomBar';
-import { MobilePageTitleBar } from './MobilePageTitleBar';
+import { CarratHeader } from '../carrat/CarratHeader';
+import { CarratFooter } from '../carrat/CarratFooter';
 
 /**
  * Theme layout — passed to `<TwilightProvider layout={ThemeLayout}>` in
@@ -57,17 +54,7 @@ export function ThemeLayout({ children }: ThemeLayoutProps) {
   const { store, theme, currency } = useTwilight();
   const { locale } = useTranslation();
   const { isLoggedIn } = useUser();
-  // Owned here so the header's nav drawer and the mobile bottom bar's Categories
-  // tab drive the same slide-in panel.
-  const [navOpen, setNavOpen] = useState(false);
 
-  // Close the nav drawer on any route change — a bottom-bar tab (Home, Cart)
-  // navigates without touching `navOpen`, so the sheet would otherwise stay
-  // open over the new page.
-  const pathname = useRouterState({ select: (s) => s.location.pathname });
-  useEffect(() => {
-    setNavOpen(false);
-  }, [pathname]);
 
   const imgRatio = productImageRatio(theme?.settings?.product_card_img_ratio);
   const showLocalization =
@@ -79,17 +66,11 @@ export function ThemeLayout({ children }: ThemeLayoutProps) {
         className={`app-inner flex flex-col min-h-full product-card-img--${imgRatio}`}
         suppressHydrationWarning
       >
-        <Header navOpen={navOpen} onNavOpenChange={setNavOpen} />
-        <MobilePageTitleBar />
-        <main id="main-content" className="flex-1">
+        <CarratHeader />
+        <main id="main-content" className="flex-1 cc-main">
           {children}
         </main>
-        <Footer />
-        <MobileBottomBar
-          navOpen={navOpen}
-          onOpenNav={() => setNavOpen(true)}
-          onCloseNav={() => setNavOpen(false)}
-        />
+        <CarratFooter />
       </div>
 
       <Suspense>

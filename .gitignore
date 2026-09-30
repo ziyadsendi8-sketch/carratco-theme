@@ -7,3 +7,4 @@ dist/
 stats.html
 coverage/
 tsconfig.tsbuildinfo
+public/assets/carrat/

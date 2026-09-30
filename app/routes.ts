@@ -33,6 +33,9 @@
 import { route } from '@tanstack/virtual-file-routes';
 
 export const routes = [
+  // Carrat & Co. home (hero · collection · lab-grown band · bespoke).
+  // Implementation: `app/routes/carrat-home.tsx`.
+  route('/', 'carrat-home.tsx'),
   // Replace the engine category page with the theme's (pill toolbar + collapsible
   // filters). Implementation: `app/routes/product-list.tsx`.
   route('/$slug/c{$id}', 'product-list.tsx'),
