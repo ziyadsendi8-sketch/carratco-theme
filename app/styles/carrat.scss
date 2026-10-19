@@ -487,3 +487,59 @@ salla-button :is(button, a), .s-button-element {
   .cc-pp__visual { border-inline-end: 0; border-bottom: 1px solid var(--cream-faint); min-height: 50vh; }
 }
 @media (max-width: 560px) { .cc-pp__body { padding: 6vh 22px; } .cc-pp__body h1 { font-size: 30px; } }
+
+/* Salla user-menu icon ships with a black fill — match the header text colour. */
+.cc-user :is(svg, svg path) { fill: currentColor !important; }
+
+/* Quantity stepper — Salla ships a white pill with white icons; restyle for navy. */
+.s-quantity-input-container {
+  background: transparent !important;
+  border: 1px solid rgba(239, 231, 208, 0.35) !important;
+  border-radius: 999px;
+}
+.s-quantity-input-button { background: transparent !important; color: var(--cream) !important; }
+.s-quantity-input-button :is(svg, svg path) { fill: currentColor !important; }
+.s-quantity-input-input { background: transparent !important; color: var(--cream) !important; }
+
+/* Cart count — the design shows "Cart (1)"; Salla renders the count tiny under the label.
+   Put it inline after the label so shoppers can see it. */
+.cc-cart #s-cart-icon { display: inline-flex; align-items: center; gap: 4px; position: relative; }
+.cc-cart .s-cart-summary-count {
+  position: static !important;
+  display: inline-flex !important;
+  min-width: 18px; height: 18px; padding: 0 5px;
+  border-radius: 999px;
+  align-items: center; justify-content: center;
+  background: var(--bronze) !important;
+  color: var(--navy, #161b34) !important;
+  font-size: 11px !important; line-height: 1;
+  transform: none !important;
+}
+.cc-cart .s-cart-summary-count:empty,
+.cc-cart .s-cart-summary-count[data-count='0'] { display: none !important; }
+header.cc-header .cc-cart .s-cart-summary-count,
+header.cc-header .cc-cart .s-cart-summary-count * { color: var(--navy-deep) !important; font-weight: 700; }
+header.cc-header .cc-cart .s-cart-summary-count { background: var(--bronze) !important; }
+
+/* Phones: keep the stone in frame (the hero photos put it right of centre). */
+@media (max-width: 700px) {
+  .cc-hero__slide { background-position: 68% center !important; }
+}
+
+/* Catalog listings (category, search, latest, offers) — navy toolbar, design cards. */
+.s-catalog-toolbar {
+  background: var(--navy-surface) !important;
+  border: 1px solid var(--navy-line) !important;
+  color: var(--cream) !important;
+  box-shadow: none !important;
+}
+.s-catalog-toolbar :is(span, label, select, button, svg) { color: var(--cream) !important; }
+.s-catalog-toolbar select { background: transparent !important; }
+.s-catalog-toolbar select option { background: var(--navy); color: var(--cream); }
+.s-catalog-toolbar__views button[aria-pressed='true'] { background: rgba(239, 231, 208, .12) !important; }
+.s-products-list-vertical-cards:has(> .cc-card) {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 22px;
+}
+#page-main-title { color: var(--cream); font-family: var(--serif); }

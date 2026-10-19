@@ -5,7 +5,7 @@ import { product, type ProductsListSource } from '@salla.sa/twilight-theme-engin
 import { Link } from '@salla.sa/twilight-theme-engine/common';
 import { ProductsListSkeleton } from '@salla.sa/twilight-components-react';
 import { ScrollCarousel } from '../common/ScrollCarousel';
-import { ProductCard } from '../product/ProductCard';
+import { ProductCard } from '../product';
 
 export interface ProductsSliderProps {
   data: {

@@ -7,6 +7,7 @@ import type { ProductPageProps } from '@salla.sa/twilight-theme-engine/routes/pr
 import type { Product } from '@salla.sa/twilight-theme-engine/types';
 import { AddToCartForm } from '../product/AddToCartForm';
 import { groupKey, specFor } from './catalog';
+import { colourNameOf } from './filters';
 import { Price, caratLabel } from './format';
 import { priceOf } from './CarratCard';
 import { useStones } from './useStones';
@@ -35,11 +36,22 @@ export function CarratProductPage({ product: initialProduct, page }: ProductPage
     : [];
 
   const shape = isAr ? spec.shapeAr : spec.shapeEn;
-  const title = spec.shapeKey ? (isAr ? product.name : `${spec.shapeEn} Diamond`) : product.name;
+  // Arabic pages get an Arabic title (the store's product names are English and
+  // break visually inside right-to-left text).
+  const colourName = colourNameOf(product);
+  const title = spec.shapeKey
+    ? isAr
+      ? `ألماسة ${spec.shapeAr}`
+      : `${spec.shapeEn} Diamond`
+    : colourName
+      ? isAr
+        ? `ألماس ${colourName.ar}`
+        : `${colourName.en} Diamond`
+      : product.name;
   const desc = (isAr ? spec.descAr : spec.descEn) || '';
   const white = tx('White', 'أبيض');
   const colourVal = spec.colored
-    ? (isAr ? spec.gradeAr : spec.gradeEn)
+    ? (isAr ? spec.gradeAr : spec.gradeEn) || (colourName ? (isAr ? colourName.ar : colourName.en) : null)
     : spec.gradeEn
       ? `${white} · ${spec.gradeEn}`
       : null;
@@ -114,10 +126,9 @@ export function CarratProductPage({ product: initialProduct, page }: ProductPage
             </p>
           )}
           <p className="cc-note">
-            {tx(
-              'GIA / IGI certificate number available on request via Instagram DM (@carratandco) for independent verification.',
-              'رقم شهادة GIA / IGI متاح عند الطلب عبر إنستغرام (@carratandco) للتحقق المستقل.'
-            )}
+            {tx('GIA / IGI certificate number available on request via Instagram DM (', 'رقم شهادة GIA / IGI متاح عند الطلب عبر إنستغرام (')}
+            <bdi dir="ltr">@carratandco</bdi>
+            {tx(') for independent verification.', ') للتحقق المستقل.')}
           </p>
           <p className="cc-note cc-note--lift">
             {tx(

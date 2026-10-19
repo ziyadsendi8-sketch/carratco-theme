@@ -2,6 +2,12 @@ import React from 'react';
 import { describe, it, expect, vi } from 'vitest';
 import { render } from '@testing-library/react';
 
+vi.mock('../../../app/components/product', () => ({
+  ProductCard: ({ product }: { product: { id: number; name: string } }) => (
+    <div data-testid="product-card">{product.name}</div>
+  ),
+}));
+
 vi.mock('@salla.sa/twilight-theme-engine/api/product', () => ({
   product: {
     list: vi.fn().mockResolvedValue({ items: [{ id: 1, name: 'Product 1' }], next: null }),

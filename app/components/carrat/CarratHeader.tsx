@@ -41,6 +41,18 @@ export function CarratHeader() {
     document.body.classList.toggle('cc-noscroll', open);
   }, [open]);
 
+  // Hide the cart badge while the cart is empty (Salla renders a literal "0").
+  useEffect(() => {
+    const sync = () =>
+      document.querySelectorAll<HTMLElement>('.cc-cart .s-cart-summary-count').forEach((el) => {
+        el.dataset.count = (el.textContent || '').trim() || '0';
+      });
+    sync();
+    const mo = new MutationObserver(sync);
+    mo.observe(document.body, { subtree: true, childList: true, characterData: true });
+    return () => mo.disconnect();
+  }, []);
+
   const multilingual = !!store?.settings?.is_multilingual || !!store?.settings?.currencies_enabled;
   const openLang = () => window.salla?.event?.dispatch('localization::open');
   // Transparent over the home hero until scrolled; solid everywhere else.

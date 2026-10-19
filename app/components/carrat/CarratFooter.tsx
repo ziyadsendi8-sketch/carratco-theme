@@ -38,7 +38,7 @@ export function CarratFooter() {
             <h4>{tx('Contact', 'تواصل')}</h4>
             <a href="mailto:info@carratandco.com">info@carratandco.com</a>
             <a href="https://instagram.com/carratandco" target="_blank" rel="noopener noreferrer">
-              @carratandco
+              <bdi dir="ltr">@carratandco</bdi>
             </a>
             <span>
               {tx(
@@ -71,7 +71,10 @@ export function CarratFooter() {
 
         <div className="cc-fbottom">
           <span>
-            © {year} {store?.name || 'Carrat & Co.'}. {tx('All rights reserved.', 'جميع الحقوق محفوظة.')}
+            <bdi dir="ltr">
+              © {year} {(store?.name || 'Carrat & Co.').replace(/\.+$/, '')}.
+            </bdi>{' '}
+            {tx('All rights reserved.', 'جميع الحقوق محفوظة.')}
           </span>
           <span>
             {tx('All prices are in SAR and include shipping.', 'جميع الأسعار بالريال السعودي وتشمل الشحن.')}

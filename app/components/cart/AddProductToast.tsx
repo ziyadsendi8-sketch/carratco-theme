@@ -360,7 +360,7 @@ export function AddProductToast() {
         </Link>
         <div className="s-add-product-toast__details">
           <Link to={product.url} className="s-add-product-toast__name">
-            {product.name}
+            <bdi dir="auto">{product.name}</bdi>
           </Link>
           {visibleOptions.length > 0 && (
             <div className="s-add-product-toast__options">

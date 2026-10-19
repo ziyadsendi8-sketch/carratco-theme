@@ -138,7 +138,7 @@ function CartItemInfo({ item }: { item: CartItemType }) {
     <div className="space-y-1">
       <div className="text-gray-900 leading-6 text-lg font-bold">
         <Link to={item.url} className="text-base">
-          {item.product_name}
+          <bdi dir="auto">{item.product_name}</bdi>
         </Link>
       </div>
 

@@ -22,6 +22,7 @@ import { product } from '@salla.sa/twilight-theme-engine/api/product';
 import type { ProductListLoaderData } from '@salla.sa/twilight-theme-engine/routes/product-listing';
 import type { Product } from '@salla.sa/twilight-theme-engine/types';
 import { ProductCard } from './ProductCard';
+import { CarratCard } from '../carrat/CarratCard';
 import { useAppliedFilters } from '@salla.sa/twilight-theme-engine/routes/product-listing';
 import type { ProductListFilters } from '@salla.sa/twilight-theme-engine/api/product';
 import { BlockHookSlot } from '../common/BlockHookSlot';
@@ -338,14 +339,15 @@ function CatalogGrid({
               t={(key, fallback) => t(key, fallback || key)}
             >
               {(items) =>
-                items.map((prod, idx) => (
-                  <ProductCard
-                    key={prod.id}
-                    product={prod}
-                    index={idx}
-                    layout={view === 'list' ? 'horizontal' : 'vertical'}
-                  />
-                ))
+                items.map((prod, idx) =>
+                  view === 'list' ? (
+                    <ProductCard key={prod.id} product={prod} index={idx} layout="horizontal" />
+                  ) : (
+                    // Carrat design card (navy gem panel · shape · grade · bronze price)
+                    // so category, search and "latest" listings match /diamonds.
+                    <CarratCard key={prod.id} product={prod} />
+                  )
+                )
               }
             </ItemsList>
           )}

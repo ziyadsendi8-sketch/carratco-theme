@@ -1,6 +1,7 @@
 import { Link } from '@salla.sa/twilight-theme-engine/common';
 import type { Product } from '@salla.sa/twilight-theme-engine/types';
 import { specFor } from './catalog';
+import { colourNameOf } from './filters';
 import { Price, caratLabel } from './format';
 import { useTx } from './i18n';
 
@@ -27,6 +28,12 @@ export function CarratCard({ product, group }: { product: Product; group?: Produ
     if (isGroup) meta = tx('Several carats', 'عدّة أوزان');
     else if (spec.colored) meta = (isAr ? spec.gradeAr : spec.gradeEn) || meta;
     else if (spec.gradeEn) meta = [spec.gradeEn, spec.clarity].filter(Boolean).join(' · ');
+  }
+  // Coloured stone without a shape in its name (e.g. "Pink Diamond"): give
+  // Arabic pages an Arabic title instead of the raw English product name.
+  if (!spec.shapeKey) {
+    const c = colourNameOf(product);
+    if (c) title = isAr ? `ألماس ${c.ar}` : `${c.en} Diamond`;
   }
   const amount = isGroup ? Math.min(...group!.map(priceOf)) : priceOf(product);
   const img = product.image?.url;

@@ -28,7 +28,22 @@ function designFor(shapeKey: string | null, colored: boolean): DesignStone[] {
  * shape + colour + carat, so the storefront can print the same spec table as
  * the design even though the Salla products only carry a name and a price.
  */
+/** Grade + clarity written in the product name ("… | F | VS1"), the store's source of truth. */
+function gradeFromName(p: Product): { grade: string; clarity: string } | null {
+  const m = `${p.name} ${p.subtitle || ''}`.match(/\|\s*([D-Z])\s*\|\s*(FL|IF|VVS[12]|VS[12]|SI[123]|I[123])\b/i);
+  return m ? { grade: m[1].toUpperCase(), clarity: m[2].toUpperCase() } : null;
+}
+
 export function specFor(p: Product): StoneSpec {
+  const spec = specFromDesign(p);
+  const named = gradeFromName(p);
+  if (named && !spec.colored) {
+    return { ...spec, gradeEn: named.grade, gradeAr: named.grade, clarity: named.clarity };
+  }
+  return spec;
+}
+
+function specFromDesign(p: Product): StoneSpec {
   const shapeKey = shapeOf(p);
   const ct = caratOf(p);
   const colored = isColoured(p);
@@ -49,7 +64,13 @@ export function specFor(p: Product): StoneSpec {
 
   for (const d of designFor(shapeKey, colored)) {
     if (d.kind === 'variant' && d.variants) {
-      const v = d.variants.find((x) => near(x.ct, ct)) ?? null;
+      // Closest variant by carat (0.90 and 1.00 are both "near" 1.00).
+      const v =
+        ct == null
+          ? null
+          : d.variants
+              .filter((x) => near(x.ct, ct))
+              .sort((a, b) => Math.abs(a.ct - ct) - Math.abs(b.ct - ct))[0] ?? null;
       if (!v && ct != null) continue;
       return {
         ...spec,

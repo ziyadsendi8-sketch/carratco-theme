@@ -5,6 +5,12 @@ import { ProductsSlider } from '../../../app/components/home/ProductsSlider';
 
 const listMock = vi.fn();
 
+vi.mock('../../../app/components/product', () => ({
+  ProductCard: ({ product }: { product: { id?: number; name?: string } }) => (
+    <div data-testid="product-card">{product.name}</div>
+  ),
+}));
+
 vi.mock('@salla.sa/twilight-theme-engine/i18n', () => ({
   useTranslation: () => ({ t: (_k: string, fb?: string) => fb ?? _k }),
 }));

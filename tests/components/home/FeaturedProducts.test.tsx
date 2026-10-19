@@ -5,6 +5,14 @@ import {
   featuredProductsConfig,
 } from '../../../app/components/home/FeaturedProducts';
 
+vi.mock('../../../app/components/product', () => ({
+  ProductCard: ({ product, layout }: { product: { id?: number; name?: string }; layout?: string }) => (
+    <div data-testid="product-card" data-layout={layout ?? 'vertical'}>
+      {product.name}
+    </div>
+  ),
+}));
+
 vi.mock('@salla.sa/twilight-theme-engine/i18n', () => ({
   useTranslation: () => ({ t: (_k: string, fb?: string) => fb ?? _k }),
 }));

@@ -28,6 +28,19 @@ export function shapeOf(p: Product): string | null {
   return SHAPES.find((s) => s.re.test(t))?.key ?? null;
 }
 
+/** Fancy colour named in the product ("Pink Diamond" → Pink / وردي), or null. */
+const COLOUR_NAMES: { re: RegExp; en: string; ar: string }[] = [
+  { re: /pink|وردي/i, en: 'Pink', ar: 'وردي' },
+  { re: /yellow|أصفر/i, en: 'Yellow', ar: 'أصفر' },
+  { re: /blue|أزرق|ازرق/i, en: 'Blue', ar: 'أزرق' },
+  { re: /green|أخضر/i, en: 'Green', ar: 'أخضر' },
+];
+export function colourNameOf(p: Product): { en: string; ar: string } | null {
+  const t = text(p);
+  const c = COLOUR_NAMES.find((x) => x.re.test(t));
+  return c ? { en: c.en, ar: c.ar } : null;
+}
+
 export function isColoured(p: Product): boolean {
   return COLOURED.test(text(p));
 }
